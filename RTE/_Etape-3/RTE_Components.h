@@ -3,8 +3,8 @@
  * Auto generated Run-Time-Environment Configuration File
  *      *** Do not modify ! ***
  *
- * Project: 'tdm' 
- * Target:  'Target 1' 
+ * Project: 'Project' 
+ * Target:  'Etape-3' 
  */
 
 #ifndef RTE_COMPONENTS_H

@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>Target 1</TargetName>
+      <TargetName>Partie-3</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060750::V5.06 update 6 (build 750)::ARMCC</pCCUsed>
@@ -18,12 +18,12 @@
           <Vendor>STMicroelectronics</Vendor>
           <PackID>Keil.STM32F1xx_DFP.2.3.0</PackID>
           <PackURL>http://www.keil.com/pack/</PackURL>
-          <Cpu>IRAM(0x20000000,0x5000) IROM(0x08000000,0x20000) CPUTYPE("Cortex-M3") CLOCK(12000000) ELITTLE</Cpu>
+          <Cpu>IRAM(0x20000000-0x20004FFF) IROM(0x8000000-0x801FFFF) CLOCK(8000000) CPUTYPE("Cortex-M3")</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile></StartupFile>
-          <FlashDriverDll>UL2CM3(-S0 -C0 -P0 -FD20000000 -FC1000 -FN1 -FF0STM32F10x_128 -FS08000000 -FL020000 -FP0($$Device:STM32F103RB$Flash\STM32F10x_128.FLM))</FlashDriverDll>
-          <DeviceId>4231</DeviceId>
-          <RegisterFile>$$Device:STM32F103RB$Device\Include\stm32f10x.h</RegisterFile>
+          <FlashDriverDll></FlashDriverDll>
+          <DeviceId></DeviceId>
+          <RegisterFile></RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -48,14 +48,14 @@
             <NotGenerated>0</NotGenerated>
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
-          <OutputDirectory>.\</OutputDirectory>
-          <OutputName>tdm12</OutputName>
+          <OutputDirectory>.\Obj\</OutputDirectory>
+          <OutputName>CHTI</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
-          <CreateHexFile>0</CreateHexFile>
+          <CreateHexFile>1</CreateHexFile>
           <DebugInformation>1</DebugInformation>
           <BrowseInformation>1</BrowseInformation>
-          <ListingPath>.\</ListingPath>
+          <ListingPath></ListingPath>
           <HexFormatSelection>1</HexFormatSelection>
           <Merge32K>0</Merge32K>
           <CreateBatchFile>0</CreateBatchFile>
@@ -106,17 +106,17 @@
           <StopOnExitCode>3</StopOnExitCode>
           <CustomArgument></CustomArgument>
           <IncludeLibraryModules></IncludeLibraryModules>
-          <ComprImg>1</ComprImg>
+          <ComprImg>0</ComprImg>
         </CommonProperty>
         <DllOption>
           <SimDllName>SARMCM3.DLL</SimDllName>
-          <SimDllArguments></SimDllArguments>
+          <SimDllArguments>-REMAP</SimDllArguments>
           <SimDlgDll>DARMSTM.DLL</SimDlgDll>
           <SimDlgDllArguments>-pSTM32F103RB</SimDlgDllArguments>
           <TargetDllName>SARMCM3.DLL</TargetDllName>
           <TargetDllArguments></TargetDllArguments>
-          <TargetDlgDll>TARMSTM.DLL</TargetDlgDll>
-          <TargetDlgDllArguments>-pSTM32F103RB</TargetDlgDllArguments>
+          <TargetDlgDll>TCM.DLL</TargetDlgDll>
+          <TargetDlgDllArguments>-pCM3</TargetDlgDllArguments>
         </DllOption>
         <DebugOption>
           <OPTHX>
@@ -133,12 +133,12 @@
             <UseExternalTool>0</UseExternalTool>
             <RunIndependent>0</RunIndependent>
             <UpdateFlashBeforeDebugging>1</UpdateFlashBeforeDebugging>
-            <Capability>0</Capability>
-            <DriverSelection>-1</DriverSelection>
+            <Capability>1</Capability>
+            <DriverSelection>4100</DriverSelection>
           </Flash1>
-          <bUseTDR>0</bUseTDR>
+          <bUseTDR>1</bUseTDR>
           <Flash2>BIN\UL2CM3.DLL</Flash2>
-          <Flash3></Flash3>
+          <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
           <pFcarmGrp></pFcarmGrp>
@@ -315,16 +315,16 @@
             <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
-            <OneElfS>0</OneElfS>
+            <OneElfS>1</OneElfS>
             <Strict>0</Strict>
             <EnumInt>0</EnumInt>
             <PlainCh>0</PlainCh>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
-            <wLevel>0</wLevel>
+            <wLevel>2</wLevel>
             <uThumb>0</uThumb>
             <uSurpInc>0</uSurpInc>
-            <uC99>1</uC99>
+            <uC99>0</uC99>
             <uGnu>0</uGnu>
             <useXO>0</useXO>
             <v6Lang>1</v6Lang>
@@ -335,10 +335,10 @@
             <v6WtE>0</v6WtE>
             <v6Rtti>0</v6Rtti>
             <VariousControls>
-              <MiscControls></MiscControls>
-              <Define></Define>
+              <MiscControls>--C99</MiscControls>
+              <Define>STM32F103xB,USE_FULL_LL_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\Src\Driver</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -360,7 +360,7 @@
             </VariousControls>
           </Aads>
           <LDads>
-            <umfTarg>0</umfTarg>
+            <umfTarg>1</umfTarg>
             <Ropi>0</Ropi>
             <Rwpi>0</Rwpi>
             <noStLib>0</noStLib>
@@ -380,47 +380,27 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>Code</GroupName>
           <Files>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\main.c</FilePath>
+              <FilePath>.\Code\main.c</FilePath>
             </File>
             <File>
               <FileName>td_sub.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\td_sub.s</FilePath>
+              <FilePath>.\Code\td_sub.s</FilePath>
             </File>
             <File>
               <FileName>td_sub2.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\td_sub2.s</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Matlab</GroupName>
-          <Files>
-            <File>
-              <FileName>Signal.asm</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Matlab\Signal.asm</FilePath>
+              <FilePath>.\Code\td_sub2.s</FilePath>
             </File>
             <File>
-              <FileName>Trigo.asm</FileName>
+              <FileName>trigo.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\Matlab\Trigo.asm</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Sys</GroupName>
-          <Files>
-            <File>
-              <FileName>startup-rvds.s</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Sys\startup-rvds.s</FilePath>
+              <FilePath>.\Code\trigo.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -428,29 +408,34 @@
           <GroupName>Lib</GroupName>
           <Files>
             <File>
+              <FileName>f1p-45.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Lib\f1p-45.s</FilePath>
+            </File>
+            <File>
+              <FileName>f17p30_f18p135.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Lib\f17p30_f18p135.s</FilePath>
+            </File>
+            <File>
+              <FileName>f23p-26_f24p-116.s</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Lib\f23p-26_f24p-116.s</FilePath>
+            </File>
+            <File>
               <FileName>gassp72.lib</FileName>
               <FileType>4</FileType>
               <FilePath>.\Lib\gassp72.lib</FilePath>
             </File>
             <File>
-              <FileName>f1p-45.asm</FileName>
+              <FileName>signal.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\Lib\f1p-45.asm</FilePath>
+              <FilePath>.\Lib\signal.s</FilePath>
             </File>
             <File>
-              <FileName>gassp72.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Lib\gassp72.h</FilePath>
-            </File>
-            <File>
-              <FileName>f17p30_f18p135.asm</FileName>
+              <FileName>startup-rvds.s</FileName>
               <FileType>2</FileType>
-              <FilePath>.\Lib\f17p30_f18p135.asm</FilePath>
-            </File>
-            <File>
-              <FileName>f23p-26_f24p-116.asm</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Lib\f23p-26_f24p-116.asm</FilePath>
+              <FilePath>.\Lib\startup-rvds.s</FilePath>
             </File>
           </Files>
         </Group>
@@ -464,10 +449,10 @@
   <RTE>
     <apis/>
     <components>
-      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="5.1.1" condition="ARMv6_7_8-M Device">
-        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="5.3.0"/>
+      <component Cclass="CMSIS" Cgroup="CORE" Cvendor="ARM" Cversion="4.3.0" condition="CMSIS Core">
+        <package name="CMSIS" schemaVersion="1.3" url="http://www.keil.com/pack/" vendor="ARM" version="4.5.0"/>
         <targetInfos>
-          <targetInfo name="Target 1"/>
+          <targetInfo name="Partie-3"/>
         </targetInfos>
       </component>
     </components>
