@@ -1,14 +1,9 @@
 --cpu Cortex-M3
 ".\obj\main.o"
-".\obj\td_sub.o"
-".\obj\td_sub2.o"
-".\obj\trigo.o"
-".\obj\f1p-45.o"
-".\obj\f17p30_f18p135.o"
-".\obj\f23p-26_f24p-116.o"
+".\obj\signal_audio_1.o"
 ".\Lib\gassp72.lib"
-".\obj\signal.o"
-".\obj\startup-rvds.o"
+".\obj\laser.o"
+".\obj\startup-rvds_1.o"
 --library_type=microlib --strict --scatter ".\Obj\CHTI.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
